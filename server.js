@@ -2,12 +2,14 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const { connectToDatabase } = require("./config/index");
 const app = require("./src/app");
+const scripts = require("./src/scripts/index");
 
 const { PORT } = process.env;
 (async () => {
   try {
     console.log("Initializing server");
     await connectToDatabase();
+    await scripts();
     app
       .listen(PORT, () =>
         console.log(`Server is running on http://localhost:${PORT}`)

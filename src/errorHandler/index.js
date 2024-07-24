@@ -1,4 +1,4 @@
-const finalErrorHandler = (error, req, res, next) => {
+exports.finalErrorHandler = (error, req, res, next) => {
   const { message, statusCode = 500, data, stack } = error;
 
   res.status(statusCode);
@@ -9,8 +9,4 @@ const finalErrorHandler = (error, req, res, next) => {
     message: message || "Internal Server Error!",
     data,
   });
-};
-
-module.exports = {
-  finalErrorHandler,
 };
