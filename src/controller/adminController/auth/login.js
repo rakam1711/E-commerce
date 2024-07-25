@@ -21,7 +21,7 @@ const login = async (req, res, next) => {
     await admin.save();
     return res.status(200).json({
       status: true,
-      message: "User Login Successfully",
+      message: "Admin Login Successfully",
       data: {
         token,
         admin,

@@ -5,6 +5,7 @@ const user = new mongoose.Schema(
     phone: { type: String, trim: true, default: null },
     email: { type: String, trim: true, default: null },
     name: { type: String, trim: true, default: "" },
+    password: { type: String },
     otp: { type: String, default: null },
     otp_expiry: { type: Date, default: Date.now },
     country: { type: String, default: "IN" },
