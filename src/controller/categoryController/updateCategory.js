@@ -1,4 +1,4 @@
-const { Category } = require("../../models/catagory");
+const { Category } = require("../../models/category");
 
 const updateCategory = async (req, res, next) => {
   try {

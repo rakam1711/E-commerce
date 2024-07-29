@@ -11,6 +11,8 @@ const {
   deleteCategory,
   listCategory,
 } = require("../controller/categoryController");
+const authenticateAdmin = require("../middleware/authenticateadmin");
+const adminProfile = require("../controller/adminController/adminProfile");
 
 const adminRoute = require("express").Router();
 
@@ -26,5 +28,7 @@ adminRoute.post("/add-category", addCategory);
 adminRoute.get("/list-category/:id", listCategory);
 adminRoute.delete("/delete-category/:id", deleteCategory);
 adminRoute.put("/update-category/:id", updateCategory);
+
+adminRoute.get("/profile", authenticateAdmin, adminProfile);
 
 module.exports = adminRoute;

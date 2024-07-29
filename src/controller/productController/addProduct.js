@@ -8,15 +8,17 @@ const addProduct = async (req, res, next) => {
       productRating,
       discount,
       description,
-      // catagoryId,
+      quantity,
+      categoryId,
     } = req.body;
     const product = new Product({
-      // Catagory: catagoryId,
+      Category: categoryId,
       productName: productName,
       productPrice: productPrice,
       productRating: productRating,
       discount: discount,
       description: description,
+      quantity: quantity,
     });
 
     await product.save();
